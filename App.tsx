@@ -8,12 +8,19 @@ import { RootStackParamList } from 'types';
 // screens
 import { Home } from 'screens';
 
+// components
+import { Header } from 'components';
+
 const RootStack = createStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator>
+      <RootStack.Navigator
+        screenOptions={{
+          header: props => <Header {...props} />,
+        }}
+      >
         <RootStack.Screen name="Home" component={Home} />
       </RootStack.Navigator>
     </NavigationContainer>
