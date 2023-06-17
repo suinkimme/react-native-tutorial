@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { RootStackParamList } from 'types';
 
 // screens
-import { Home } from 'screens';
+import { Home, Gallery } from 'screens';
 
 // components
 import { Header } from 'components';
@@ -22,6 +22,7 @@ const App = () => {
         }}
       >
         <RootStack.Screen name="Home" component={Home} />
+        <RootStack.Screen name="Gallery" component={Gallery} />
       </RootStack.Navigator>
     </NavigationContainer>
   );

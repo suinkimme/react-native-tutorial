@@ -12,8 +12,7 @@ const Header = ({ navigation, route }: StackHeaderProps) => {
     <Appbar.Header>
       <Appbar.BackAction onPress={() => {}} />
       <Appbar.Content title={name} />
-      <Appbar.Action icon="calendar" onPress={() => {}} />
-      <Appbar.Action icon="magnify" onPress={() => {}} />
+      {/* <Appbar.Action icon="magnify" onPress={() => {}} /> */}
     </Appbar.Header>
   );
 };
