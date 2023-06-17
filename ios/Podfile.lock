@@ -284,6 +284,8 @@ PODS:
   - React-jsinspector (0.69.11)
   - React-logger (0.69.11):
     - glog
+  - react-native-cameraroll (4.1.2):
+    - React-Core
   - react-native-safe-area-context (4.5.3):
     - RCT-Folly
     - RCTRequired
@@ -412,6 +414,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - "react-native-cameraroll (from `../node_modules/@react-native-community/cameraroll`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -487,6 +490,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-cameraroll:
+    :path: "../node_modules/@react-native-community/cameraroll"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-perflogger:
@@ -555,6 +560,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 5813455a4a908fb7284aa13307a9e0386e93b0bb
   React-jsinspector: 9ca5bf73ed0a195397e45fdbcd507cf7d503c428
   React-logger: 700340e325f21ba2a2d6413a61ef14268c7360aa
+  react-native-cameraroll: 2957f2bce63ae896a848fbe0d5352c1bd4d20866
   react-native-safe-area-context: b8979f5eda6ed5903d4dbc885be3846ea3daa753
   React-perflogger: fdee2a0c512167ae4c19c4e230ccf6aa66a6aff0
   React-RCTActionSheet: 1cf5fef4e372f1c877969710a51bea4bb25e78fe
