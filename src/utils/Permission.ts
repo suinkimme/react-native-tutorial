@@ -108,3 +108,25 @@ pod 'Permission-StoreKit', :path => "#{permissions_path}/StoreKit"
 <key>NSUserTrackingUsageDescription</key>
 <string>YOUR TEXT</string>
 */
+import { Platform } from 'react-native';
+import { PERMISSIONS, Permission, check } from 'react-native-permissions';
+
+type PermissionPerOS = {
+  [key: string]: Permission;
+};
+
+const androidPermissions: PermissionPerOS = {
+  photo: PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
+};
+
+const iosPermissions: PermissionPerOS = {
+  photo: PERMISSIONS.IOS.PHOTO_LIBRARY,
+};
+
+const permissionsPerOS =
+  Platform.OS === 'ios' ? iosPermissions : androidPermissions;
+
+export const requestPermission = async (permission: string) => {
+  const checked = await check(permissionsPerOS[permission]);
+  console.log(checked);
+};
