@@ -1,2 +1,2 @@
 export { goBack } from './Navigation';
-export { requestPermission } from './Permission';
+export { requestPermissions } from './Permission';

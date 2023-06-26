@@ -19,8 +19,14 @@ const Home = ({ navigation }: HomeProps) => {
     <ScrollView style={styles.scrollView}>
       <Touchable onPress={() => navigation.navigate('Gallery')}>
         <List.Item
-          title="Gallery Example"
+          title="Gallery"
           left={props => <List.Icon {...props} icon="folder-multiple-image" />}
+        />
+      </Touchable>
+      <Touchable onPress={() => navigation.navigate('Redux')}>
+        <List.Item
+          title="Redux"
+          left={props => <List.Icon {...props} icon="registered-trademark" />}
         />
       </Touchable>
     </ScrollView>

@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { Text } from 'react-native';
+import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Button } from 'react-native-paper';
 
 // utils
-import { requestPermission } from 'utils';
+import { requestPermissions } from 'utils';
 
 // types
 import { RootStackParamList } from 'types';
@@ -14,11 +14,11 @@ export type GalleryProps = NativeStackScreenProps<
 >;
 
 const Gallery = ({}: GalleryProps) => {
-  useEffect(() => {
-    requestPermission('photo');
-  }, []);
-
-  return <Text>Gallery</Text>;
+  return (
+    <Button mode="text" onPress={() => requestPermissions(['camera', 'photo'])}>
+      Press me
+    </Button>
+  );
 };
 
 export default Gallery;

@@ -109,24 +109,40 @@ pod 'Permission-StoreKit', :path => "#{permissions_path}/StoreKit"
 <string>YOUR TEXT</string>
 */
 import { Platform } from 'react-native';
-import { PERMISSIONS, Permission, check } from 'react-native-permissions';
+import {
+  PERMISSIONS,
+  Permission,
+  checkMultiple,
+} from 'react-native-permissions';
 
 type PermissionPerOS = {
   [key: string]: Permission;
 };
 
 const androidPermissions: PermissionPerOS = {
+  camera: PERMISSIONS.ANDROID.CAMERA,
   photo: PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
 };
 
 const iosPermissions: PermissionPerOS = {
+  camera: PERMISSIONS.IOS.CAMERA,
   photo: PERMISSIONS.IOS.PHOTO_LIBRARY,
 };
 
 const permissionsPerOS =
   Platform.OS === 'ios' ? iosPermissions : androidPermissions;
 
-export const requestPermission = async (permission: string) => {
-  const checked = await check(permissionsPerOS[permission]);
-  console.log(checked);
+export const requestPermissions = async (permissions: string[]) => {
+  const permissionList: Permission[] = [];
+  permissions.map((item: string) => {
+    permissionList.push(permissionsPerOS[item]);
+  });
+
+  await checkMultiple(permissionList).then(statuses => {
+    console.log(statuses);
+
+    // denied만 찾아서 Permission 배열로 만들고 requestMultiple하면 될듯...?
+    // 근데 더 좋은 방법이 있는 것 같기두함
+    // iOS, Android 권한 플로우가 다르니까 참고해야할듯
+  });
 };
