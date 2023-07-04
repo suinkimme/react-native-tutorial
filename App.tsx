@@ -6,15 +6,24 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { RootStackParamList } from 'types';
 
 // screens
-import { Home } from 'screens';
+import { Home, Gallery, Redux } from 'screens';
+
+// components
+import { Header } from 'components';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator>
+      <RootStack.Navigator
+        screenOptions={{
+          header: props => <Header {...props} />,
+        }}
+      >
         <RootStack.Screen name="Home" component={Home} />
+        <RootStack.Screen name="Gallery" component={Gallery} />
+        <RootStack.Screen name="Redux" component={Redux} />
       </RootStack.Navigator>
     </NavigationContainer>
   );
